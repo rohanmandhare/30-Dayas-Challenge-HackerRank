@@ -1,0 +1,7 @@
+public class Solution {
+public static void main(String[] args){
+  String str = "Hello World";
+  string str1 = "Your Welcome on HackerRank!!";
+  System.out.println(str+str1);
+}
+}

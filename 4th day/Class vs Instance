@@ -1,0 +1,45 @@
+import java.util.*;
+import java.util.io;
+import java.util.Scanner;
+
+public class Person{
+private int age;
+public Person(int initialAge){
+    if(initialAge>0){
+      age = initialAge;
+       }
+    else{
+        this.age=0;
+        System.out.println("Age is not Valide, setting age to 0.");
+      }
+      }
+public void amIold(){
+    if(age<13){
+      System.out.println("You are young.");
+      }
+    else if(age>=13 && age<18){
+      System.out.println("You are a teenager.");
+      }
+    else{
+      System.out.println("You are old.");
+      }
+  }
+public void YearPasses(){
+      age++;
+      }
+public static void main(String[] args){
+ Scanner input = new Scanner(System.in); 
+ int T = input.nextInt();
+ for (int i=0 ; i<T ; i++){
+    int age = input.nextInt();
+    Person p = new Person(age);
+    p.amIold();
+    for (int j=0 ; j<3 ; j++){
+    p.YearPasses();
+    }
+    p.amIold();
+    System.out.println();
+ }
+ input.close();
+}
+}

@@ -1,0 +1,25 @@
+import java.util.*;
+import java.util.Scanner;
+import java.io.*;
+import java.util.Map;
+import java.util.HashMap;
+
+public class Solution {
+public static void main(String[] args){
+  Scanner input = new Scanner(System.in);
+  int n = input.nextInt();
+  Map<String , Integer> PhoneBook = new HashMap<String , Integer>();
+  
+  for (int i=0 ; i<n ; i++){
+    String name = input.next();
+    int num = input.nextInt();
+    PhoneBook.put(name , num);
+  }
+  
+  while(input.hasNext()){
+    String sr = input.next();
+    Integer value = PhoneBook.get(sr);
+    System.out.println(PhoneBook.get(sr)==null ? "Not found" : sr + "=" + value);
+  }
+}
+}

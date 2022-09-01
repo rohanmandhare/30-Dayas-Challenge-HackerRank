@@ -1,0 +1,48 @@
+import java.util.Scanner;
+import java.io.*;
+import java.util.*;
+import java.util.ArrayList;
+import java.util.regex.*;
+import java.util.stream.*;
+import static java.util.stream.Collecters.joining;
+import static java.util.stream.Collecters.toList;
+
+public class Solution{
+public static void main(String[] args){
+  Scanner input = new Scanner(System.in);
+  ArrayList<Integer> l = new ArrayList<Integer>();
+  int n = input.nextInt();
+  int bin = 0;
+  while(n>0){
+    bin = n%2;
+    l.add(bin);
+    n = n/2;
+  }
+  Collections.reverse(l);
+  
+  int max = 0;
+  int count = 0;
+  
+  ArrayList<Integer> counts = new ArrayList<Integer>();
+  for (int i=0 ; i<l.size() ; i++){
+    if (l.get(i) ==1){
+      count++;
+    }
+    else{
+      counts.add(count);
+      count= 0;
+    }
+  }
+  counts.add(count);
+  Collections.sort(counts);
+  
+  if(counts.size()>1){
+    System.out.println(counts.get(counts.size()-1));
+  }
+  else{
+    System.out.println(counts.get(0));
+  
+  }
+  
+}
+}

@@ -1,0 +1,38 @@
+import java.util.*;
+import java.util.Scanner;
+
+abstract class Book{
+String title;
+String author;
+Book(String title , String author){
+  this.title = title;
+  this.author = author;
+} 
+abstract void display();
+}
+
+class Mybook extends Book{
+  int price;
+  Mybook(String title , String author , int price){
+    super(title ,author);
+    this.price=price;
+  }
+   void display()
+    {
+    System.out.println("Title: "+title);
+    System.out.println("Author: "+author);
+    System.out.println("Price: "+price);
+    }
+}
+
+public class Solution{
+  public static void main(String[] args){
+  Scanner input = new Scanner(System.in);
+    String title = input.nextLine();
+    String author = input.nextLine();
+  int price = input.nextInt();
+  input.close();
+  Book m1 = new Mybook(title , author , price);
+  m1.display();
+  }
+}

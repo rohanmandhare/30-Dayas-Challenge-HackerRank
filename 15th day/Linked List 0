@@ -1,0 +1,19 @@
+import java.io.*;
+import java.util.*;
+
+public class Solution {
+
+    public static void main(String[] args) {
+        /* Enter your code here. Read input from STDIN. Print output to STDOUT. Your class should be named Solution. */
+        Scanner input = new Scanner(System.in);
+        int T = input.nextInt();
+        LinkedList<Integer> mylist = new LinkedList<Integer>();
+        for (int i=0 ; i<T ; i++){
+            mylist.add(input.nextInt());
+            
+        }
+        System.out.print(mylist.get(0));
+         System.out.print(" "+mylist.get(1));                              System.out.print(" "+mylist.get(2));
+        System.out.print(" "+mylist.get(3));
+    }
+}

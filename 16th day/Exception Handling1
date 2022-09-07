@@ -1,0 +1,32 @@
+import java.io.*;
+import java.math.*;
+import java.security.*;
+import java.text.*;
+import java.util.*;
+import java.util.concurrent.*;
+import java.util.function.*;
+import java.util.regex.*;
+import java.util.stream.*;
+import static java.util.stream.Collectors.joining;
+import static java.util.stream.Collectors.toList;
+
+
+
+public class Solution {
+    public static void main(String[] args) throws IOException {
+        Scanner input = new Scanner(System.in);
+        String S = input.nextLine();
+//here exception conditions are applied
+        try
+        {
+           System.out.println(Integer.valueOf(S));
+        }
+  //if try block full fill it's requirement then the object will be pass to the catch block      
+        catch (Exception e)
+        {
+            System.out.println("Bad String");
+        }
+   //here we just close the input method which used to take input from user
+        input.close();
+    }
+}

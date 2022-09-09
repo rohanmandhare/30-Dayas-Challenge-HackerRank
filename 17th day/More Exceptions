@@ -1,0 +1,32 @@
+import java.util.*;
+import java.io.*;
+class Calculator{
+  public int power(int n , int p ) throws Exception{
+    if(n<0 || p<0) throw new Exception{
+      System.out.println("n and p should be non-negative.");
+    }
+    else{
+      return (int) Math.pow(n,p);
+    }
+  }
+}
+public class Solution{
+public static void main(String[] args){
+  Scanner input = new Scanner(System.in);
+  int T = input.nextInt();
+  while(T-- >0)
+  {
+    int n = input.nextInt();
+    int p = input.nextInt();
+    Calculator mycal = new Calculator();
+    try {
+        int ans =mycal.power(n , p);
+        System.out.println(ans);
+    }
+    catch(Exception e){
+      System.out.println(e.getMessage());
+    }
+  }
+  input.close();
+}
+}

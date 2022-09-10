@@ -1,0 +1,39 @@
+import java.util.*;
+import java.io.*;
+// here is a interface method 
+
+interface AdvancedArithmetic{
+public int divisorSum(int n);
+}
+
+//here is a class which implements all interfaces
+class Calculator implements AdvancedArithmetic{
+  //here is a divisor method which is called according to the interface method
+  public int divisorSum(int n){
+    int sum =0 ;
+    //here is a for loop
+    for (int i=1 ; i<=n ; i++){
+//here we just check if  i value is completely divided by the given number then i add to the sum variable
+    if(n %i ==0){
+        sum+= i;
+      }
+    }
+    //here we return the sum variable
+    return sum;
+  }
+}
+//here is a main class in which actual main method is define
+//here we providing some input to the above defined methods and that is a great way 
+public class Solution{
+//this is a main method
+public static void main(String[] args){
+//here we add this method for getting input from user
+  Scanner input = new Scanner(System.in);
+  //here is we defined n variable which takes integer type inputs from user
+  int n = input.nextInt();
+  //here we make a object of a class which are used to called methods which generally defined inside the class
+  AdvancedArithmetic a1 = new Calculator();
+  System.out.println("I implemented: AdvancedArithmetic");
+  System.out.println(a1.divisorSum(n));
+}
+}
